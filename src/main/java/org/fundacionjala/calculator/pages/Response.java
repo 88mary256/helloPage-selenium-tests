@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 /** This class represents the response page. **/
 @Component
-public class HelloServlet extends AbstractPage {
+public class Response extends AbstractPage {
 	
     @FindBy(css = "#credentials_username")
     private WebElement userNameTextField;
