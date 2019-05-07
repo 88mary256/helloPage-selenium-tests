@@ -68,10 +68,4 @@ public class HelloPageSteps {
         LOGGER.debug(expectedResponse.equals(responsePage.getTextHello()));
         assertEquals(responsePage.getTextHello(), expectedResponse);
     }
-
-    /** This method close the browser after the features finish. */
-    @AfterTest
-    public void close() {
-        DriverManager.getInstance().getDriver().quit();
-    }
 }

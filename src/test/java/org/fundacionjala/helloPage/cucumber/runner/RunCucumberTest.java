@@ -11,6 +11,8 @@ import org.testng.annotations.BeforeTest;
 
 import org.fundacionjala.core.ui.driver.DriverManager;
 
+import static org.testng.Assert.assertTrue;
+
 /** Class which runs all features. */
 @CucumberOptions(
         features = "src/test/resources/features",
@@ -18,5 +20,18 @@ import org.fundacionjala.core.ui.driver.DriverManager;
         plugin = {"pretty"}
 )
 public class RunCucumberTest extends AbstractTestNGCucumberTests {
+    private static final Logger LOGGER =
+            Logger.getLogger(RunCucumberTest.class.getName());
 
+    /** This method execute before the tests. */
+    @BeforeTest
+    public void open() {
+        assertTrue(true);
+    }
+
+    /** This method close the browser after the features finish. */
+    @AfterTest
+    public void close() {
+        DriverManager.getInstance().getDriver().quit();
+    }
 }
