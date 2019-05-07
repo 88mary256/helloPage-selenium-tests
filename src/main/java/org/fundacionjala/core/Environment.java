@@ -28,11 +28,13 @@ public final class Environment {
 
     /**
      * Method for return the instance dof environment.
+     *
      * @return the our instance.
      */
     public static Environment getInstance() {
         if (ourInstance == null) {
             ourInstance = new Environment();
+
         }
         return ourInstance;
     }
@@ -53,41 +55,11 @@ public final class Environment {
 
     /**
      * Getter of the user name.
+     *
      * @param key type String
      * @return the String of user.
      */
     public String getValue(final String key) {
         return this.jsonContext.read(key);
-    }
-
-    /**
-     * This method get the username for provided key.
-     * {owner1, memeber1}
-     *
-     * @param key string.
-     * @return string.
-     */
-    public String getUserName(final String key) {
-        final String userNameKey = String
-                .format("credentials.%s.username", key);
-        return Environment.getInstance().getValue(userNameKey);
-    }
-
-    /**
-     * This method get the account name for a provided key.
-     * {owner1, memeber1}
-     *
-     * @param key string.
-     * @return string.
-     */
-    public String getAccountName(final String key) {
-        try {
-            return StringUtil.getKey(getUserName(key), '@').replace(".", "");
-        } catch (final Exception e) {
-            final String format =
-                    "Account name for key %s doesn't found.\nException: %s";
-            LOGGER.warn(String.format(format, key, e.getMessage()));
-            return key;
-        }
     }
 }

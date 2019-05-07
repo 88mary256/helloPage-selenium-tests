@@ -1,0 +1,10 @@
+{
+  "url": {
+    "tomcat": "http://10.28.136.26:8888/helloPage/",
+    "gretty": "http://10.28.136.26:9000/helloPage/"
+  },
+  "tags": " --tags ~@wip",
+  "local": {
+    "browser": "chrome"
+  }
+}
