@@ -26,8 +26,8 @@ public class RunCucumberTest extends AbstractTestNGCucumberTests {
     /** This method execute before the tests. */
     @BeforeTest
     public void open() {
-        DriverManager.getInstance().getDriver().get(Environment
-                .getInstance().getValue("url.tomcat"));
+        //DriverManager.getInstance().getDriver().get(Environment
+        //      .getInstance().getValue("url.tomcat"));
         assertTrue(true);
     }
 

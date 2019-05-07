@@ -34,6 +34,7 @@ public class HelloPageSteps {
      */
     @Given("has helloPage running")
     public void hasHelloPageRunning() {
+
         if (!helloPage.isInputNamePresent()) {
             DriverManager.switchToGrettyUrl();
         }
